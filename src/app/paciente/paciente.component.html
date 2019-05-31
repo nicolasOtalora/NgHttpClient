@@ -1,0 +1,27 @@
+<h1>Lista de Pacientes</h1>
+<ul>
+  <li *ngFor="let paciente of pacientes">
+    {{paciente.sName}}, {{paciente.fName}}
+  </li>
+</ul>
+
+<h1>Buscar paciente</h1>
+
+<input #id/> <button type="button"(click)="buscarPaciente(id.value)">Buscar</button>
+<p>{{paciente[0].sName}}, {{paciente[0].fName}}</p>
+
+
+<h1>Borrar paciente</h1>
+<input #idBorrar/> <button type="button"(click)="deletePaciente(idBorrar.value)">Borrar</button>
+
+<h1>Agregar paciente</h1>
+Nombre: <input #nombre/>
+Apellido: <input #apellido/> <br>
+<button type="button" (click)="addPaciente(nombre.value,apellido.value)">Agregar</button>
+
+<h1>Editar paciente</h1>
+Paciente ID: <input #idPaciente/><br>
+<h3>Nuevos Valores</h3>
+Nombre: <input #newNombre/>
+Apellido: <input #newApellido/> <br>
+<button type="button" (click)="updatePaciente(idPaciente.value,newNombre.value,newApellido.value)">Editar</button>
